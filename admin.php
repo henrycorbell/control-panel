@@ -31,12 +31,20 @@ function lastMod() {
 }
 window.onload=lastMod();
 </script>
-<script type="text/javascript">
-  var userip;
-</script>
-<script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
-<script type="text/javascript">
-  document.write("Your IP: ", userip);
-</script></center>
+            <p><?php
+            function getUserIP(){
+                if (!empty($_SERVER['HTTP_CLIENT_IP'])){
+                  $ip=$_SERVER['HTTP_CLIENT_IP'];
+                }
+                elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+                  $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+                } else {
+                  $ip=$_SERVER['REMOTE_ADDR'];
+                }
+                return $ip;
+            }
+            echo 'Users Public IP: ' . getUserIP();
+            ?></p>
+</center>
 </div>
 </html>
