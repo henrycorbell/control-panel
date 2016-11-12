@@ -4,7 +4,7 @@ Copyright © 2016 Henry Corbell and Tim Sayers. All Rights Reserved.
 
 **Complete and Incomplete features list:**
 - [x] Login with auth checks
-- [ ] Restart Server
+- [X] Restart Server
 - [ ] Restart Nginx
 - [ ] Backup & Restore Server
 
