@@ -53,6 +53,7 @@ echo("Utils Binary\nVersion 1.0");
 echo("\nHelp:\n");
 echo("\nutils -h Brings up help\n");
 echo("\nutils -a Brings up about\n");
+echo("\nutils -r Restarts Server\n");
 echo("\nutils -n Restarts Nginx\n");
 echo("\nutils -c Clears logs\n");
 }
