@@ -9,18 +9,19 @@ if(empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off"){
     exit();
 }
 if($_SESSION["signed_in"] == "true"){
-<?php shell_exec('sudo  utils -r >/dev/null &'); ?> //www-data must be in sudoers without password.
+shell_exec('sudo  utils -r > /dev/null &');
+//shell_exec("sudo utils -r");
+}else{
+}
 ?>
-<!-- HTML - START - RESTART PAGE -->
 <html>
 <head>
   <title>Control Panel - SC1425</title>
 </head>
 <body onload="check()">
   <center>
-  <div id="loadingOverlayAlt" class="whiteBg"><img src="../imgs/Loading_BlueFast_16x.gif" alt="" />  Restarting Server - Please wait...</div>
+  <div id="loadingOverlayAlt" class="whiteBg"><img src="imgs/Loading_BlueFast_16x.gif" alt="" />  Restarting Server - Please wait...</div>
   </div>
-
   <script>
   function check() {
     var xhttp = new XMLHttpRequest();
@@ -36,16 +37,7 @@ if($_SESSION["signed_in"] == "true"){
       setTimeout(check, 50);
   }
   </script>
-
   </center>
 </body>
 </html>
-<!-- HTML - END - RESTART PAGE -->
-<? }else{
-  echo 'Not signed in';
-  $redirect = 'https://' .  . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?error=not_signed_in';
-  header('Location: ' . $redirect);
-  exit();
 
-}
-?>
