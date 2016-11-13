@@ -3,3 +3,27 @@
 	bottom: 0;
 	width: 100%;
 }
+
+#uptime {
+	color: green;
+}
+
+.buttons {
+	height: 150%;
+	width: 150%;
+	padding: 7px;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: red;
+	text-transform: uppercase;
+}
+
+a.buttons {
+	color: black;
+	text-decoration: none;
+}
+
+a.buttons:visited {
+	text-decoration: none;
+	color: black;
+}
